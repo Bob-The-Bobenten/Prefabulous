@@ -6,9 +6,10 @@ This repository contains the source code for **Igloo man**, a game developed in 
 
 ## Technical Skills Demonstrated
 * **C# Programming:** Implementation of game logic, player controllers, and system managers.
-* **Unity Engine:** Proficient use of Prefabs, ScriptableObjects, and Physics.
+* **Unity Engine:** Proficient use of ScriptableObjects and Physics.
 * **Version Control:** Professional Git workflow including branch management and `.gitignore` optimization.
 * **Problem Solving:** Efficient handling of object-oriented programming (OOP) principles within a game environment.
+* **Graphic design:** All the art in the file was created by me with no external help.
 
 ## How to Explore
 * **Assets/Scripts:** This is where the core C# logic resides.

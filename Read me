@@ -1,0 +1,18 @@
+# Igloo man - Unity Game Development Project
+
+## Overview
+This repository contains the source code for **Igloo man**, a game developed in Unity. The project demonstrates my proficiency in C# scripting, game architecture, and version control workflows.
+//I know the project name is prefabulous, but that's just because the old project was eaten alive by prefabs R.I.O
+
+## Technical Skills Demonstrated
+* **C# Programming:** Implementation of game logic, player controllers, and system managers.
+* **Unity Engine:** Proficient use of Prefabs, ScriptableObjects, and Physics.
+* **Version Control:** Professional Git workflow including branch management and `.gitignore` optimization.
+* **Problem Solving:** Efficient handling of object-oriented programming (OOP) principles within a game environment.
+
+## How to Explore
+* **Assets/Scripts:** This is where the core C# logic resides.
+* **ProjectSettings:** Configuration files showing project structure.
+
+## Contact
+Feel free to explore the code.

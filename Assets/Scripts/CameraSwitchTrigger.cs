@@ -20,6 +20,7 @@ public class CameraSwitchTrigger : MonoBehaviour
         {
             newCam.Priority = 20;
             mainCam.Priority = 5;
+            SaveManager.instance.SaveGame(transform.position);
             /*if (loadLevel1!=null)
                 loadLevel1.gameObject.SetActive(true);
             if (loadLevel2 != null)

@@ -1891,6 +1891,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &25899109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25899111}
+  - component: {fileID: 25899110}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &25899110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25899109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde28478a2294cb47bad50b842fb93d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSave:
+    lastSavePos: {x: 0, y: 0, z: 0}
+    collectedFeatherIDs: []
+--- !u!4 &25899111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25899109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.791601, y: 15.021832, z: -0.030178031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &30505858
 GameObject:
   m_ObjectHideFlags: 0
@@ -20217,6 +20264,7 @@ GameObject:
   - component: {fileID: 156800606}
   - component: {fileID: 156800605}
   - component: {fileID: 156800604}
+  - component: {fileID: 156800608}
   m_Layer: 0
   m_Name: FeatherGold
   m_TagString: Feather
@@ -20357,6 +20405,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 988589457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156800608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156800603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec787dfb2a18ab04b8ecb2e1af2b66f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featherID: FeatherGold
 --- !u!1 &160107156
 GameObject:
   m_ObjectHideFlags: 0
@@ -48276,6 +48337,7 @@ GameObject:
   - component: {fileID: 331511356}
   - component: {fileID: 331511355}
   - component: {fileID: 331511354}
+  - component: {fileID: 331511358}
   m_Layer: 0
   m_Name: FeatherRed
   m_TagString: Feather
@@ -48416,6 +48478,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1349138829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331511358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331511353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec787dfb2a18ab04b8ecb2e1af2b66f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featherID: FeatherRed
 --- !u!1 &334302216
 GameObject:
   m_ObjectHideFlags: 0
@@ -66191,6 +66266,7 @@ GameObject:
   - component: {fileID: 594928770}
   - component: {fileID: 594928769}
   - component: {fileID: 594928768}
+  - component: {fileID: 594928771}
   m_Layer: 0
   m_Name: FeatherBrown
   m_TagString: Feather
@@ -66331,6 +66407,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &594928771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594928766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec787dfb2a18ab04b8ecb2e1af2b66f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featherID: FeatherBrown
 --- !u!1 &614324261
 GameObject:
   m_ObjectHideFlags: 3
@@ -74522,6 +74611,7 @@ GameObject:
   - component: {fileID: 790023669}
   - component: {fileID: 790023668}
   - component: {fileID: 790023671}
+  - component: {fileID: 790023672}
   m_Layer: 0
   m_Name: FeatherBlue
   m_TagString: Feather
@@ -74662,6 +74752,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &790023672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790023667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec787dfb2a18ab04b8ecb2e1af2b66f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featherID: FeatherBlue
 --- !u!1 &790190023
 GameObject:
   m_ObjectHideFlags: 0
@@ -199204,6 +199307,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0af2955a3aa78b64bb9bc75b70271d6f, type: 3}
   - {fileID: 8300000, guid: e98e357ff3e8f4743a84b8ba4f4efd3f, type: 3}
   - {fileID: 8300000, guid: ecd44faf74289334082e8729ebaa072c, type: 3}
+  - {fileID: 8300000, guid: 904d23599e6d1864ba615fbc82ccf449, type: 3}
+  - {fileID: 8300000, guid: 4c9afc76070d65c4caead3bce6a50244, type: 3}
+  - {fileID: 8300000, guid: 13588cf714b106443ad2d211c9fdce7c, type: 3}
+  - {fileID: 8300000, guid: 57d14b3bcfdba6640b0abae7076d1777, type: 3}
+  - {fileID: 8300000, guid: 2b24980240e7f95419ed96657740b1bb, type: 3}
+  - {fileID: 8300000, guid: 94c68353c8999664c83909d3a33a615f, type: 3}
   silenceGap: {x: 30, y: 60}
   volume: 0.5
 --- !u!1 &1270062333
@@ -336133,6 +336242,7 @@ GameObject:
   - component: {fileID: 2030557517}
   - component: {fileID: 2030557516}
   - component: {fileID: 2030557515}
+  - component: {fileID: 2030557519}
   m_Layer: 0
   m_Name: FeatherGreen
   m_TagString: Feather
@@ -336273,6 +336383,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1357729273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2030557519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030557514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec787dfb2a18ab04b8ecb2e1af2b66f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featherID: FeatherGreen
 --- !u!1 &2039764103
 GameObject:
   m_ObjectHideFlags: 3
@@ -350380,3 +350503,4 @@ SceneRoots:
   - {fileID: 1867501709}
   - {fileID: 1443651350}
   - {fileID: 1316578840}
+  - {fileID: 25899111}

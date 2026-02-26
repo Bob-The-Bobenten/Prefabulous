@@ -77,7 +77,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        rb.position = SpawnPoint;
+        // Check if we have a valid save
+        if (SaveManager.instance != null && SaveManager.instance.currentSave.lastSavePos != Vector3.zero)
+        {
+            SpawnPoint = SaveManager.instance.currentSave.lastSavePos;
+
+            // Force the Rigidbody to move immediately
+            rb.position = SpawnPoint;
+            transform.position = SpawnPoint;
+        }
+        else
+        {
+            SpawnPoint = transform.position;
+        }
+
+        // Rest of your start code...
         if (Camera.main != null) Camera.main.orthographicSize = CameraSize;
         trailRenderer = GetComponent<TrailRenderer>();
     }

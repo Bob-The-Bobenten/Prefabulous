@@ -25,6 +25,7 @@ public class UpCameraSwitch : MonoBehaviour
                 rb.velocity = new Vector2(0, 0);
                 rb.velocity = new Vector2(0, 30);
             }
+            SaveManager.instance.SaveGame(transform.position);
             newCam.Priority = 20;
             mainCam.Priority = 5;
             if (loadLevel1 != null)

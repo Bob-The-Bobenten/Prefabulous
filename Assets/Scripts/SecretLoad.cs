@@ -13,7 +13,9 @@ public class SecretLoad : MonoBehaviour
             loadLevel.gameObject.SetActive(false);
         if (unloadHidden != null)
             unloadHidden.gameObject.SetActive(true);
-        if (loadLevel.gameObject.name != PlayerClassManager.SelectedClass)
+        string savedClass = SaveManager.instance.currentSave.playerClass;
+
+        if (loadLevel.gameObject.name != savedClass)
         {
             Destroy(gameObject);
             Debug.Log(gameObject.name);

@@ -346,6 +346,11 @@ public class PlayerMovement : MonoBehaviour
             FeatherAnimator.SetTrigger("Collect");
             score += 1000; Destroy(other.gameObject, 2.3f); 
         }
+
+        if (other.CompareTag("Bench"))
+        {
+            animator.SetTrigger("Bench");
+        }
     }
 
     private void OnDrawGizmosSelected()

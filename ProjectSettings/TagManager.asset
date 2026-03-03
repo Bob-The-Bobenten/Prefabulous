@@ -12,6 +12,7 @@ TagManager:
   - ClimbPower
   - Feather
   - Audio
+  - Bench
   layers:
   - Default
   - TransparentFX

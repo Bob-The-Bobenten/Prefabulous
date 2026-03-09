@@ -12,6 +12,7 @@ public class SaveManager : MonoBehaviour
         public Vector3 lastSavePos;
         public List<string> collectedFeatherIDs = new List<string>();
         public string playerClass; // NEW: Stores "Warrior", "Mage", etc.
+        public int score;
     }
 
     public SaveData currentSave = new SaveData();
@@ -68,6 +69,9 @@ public class SaveManager : MonoBehaviour
     public void SetClassAndStart(string chosenClass)
     {
         currentSave.playerClass = chosenClass;
-        // You can also trigger SceneManager.LoadScene here
+    }
+    public void SetScore(int Score)
+    {
+        currentSave.score = Score;
     }
 }

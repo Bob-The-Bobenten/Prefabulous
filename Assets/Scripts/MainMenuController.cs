@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
     public GameObject mainMenuPanel;
     public GameObject classSelectionPanel;
     public GameObject continueButton;
+    public GameObject mainMenu;
+    public GameObject mainMenuNoTitle;
+    public Button confirm;
     public TMP_Dropdown classDropdown;
 
 
@@ -18,6 +22,8 @@ public class MainMenuController : MonoBehaviour
         continueButton.SetActive(System.IO.File.Exists(path));
         mainMenuPanel.SetActive(true);
         classSelectionPanel.SetActive(false);
+        mainMenu.SetActive(true);
+        mainMenuNoTitle.SetActive(false);
     }
 
     public void OnContinuePressed()
@@ -36,6 +42,9 @@ public class MainMenuController : MonoBehaviour
         // Now proceed to class selection
         mainMenuPanel.SetActive(false);
         classSelectionPanel.SetActive(true);
+        mainMenu.SetActive(false);
+        mainMenuNoTitle.SetActive(true);
+
     }
 
     public void OnStartPressed()
@@ -49,9 +58,16 @@ public class MainMenuController : MonoBehaviour
     {
         string chosenClass = classDropdown.options[classDropdown.value].text;
 
+        if (chosenClass == "Select")
+        {
+            confirm.interactable = false;
+            return;
+        }
         PlayerClassManager.SelectedClass = chosenClass;
 
         Debug.Log("Chosen class: " + chosenClass);
+
+        confirm.interactable = true;
     }
 
     public void OnConfirmClass()

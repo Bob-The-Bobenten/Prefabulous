@@ -1,7 +1,9 @@
 ﻿using System.Collections;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -61,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 spikeCheckSize = new Vector2(0.5f, 0.5f);
 
     public bool isGrounded;
+    public SaveManager featherNum;
     public bool hasHit = false;
     private bool isAboveSpike;
     public float displace = 0.1f;
@@ -123,8 +126,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("xVelocity", rb.velocity.x);
         animator.SetBool("isWallsliding", isWallSliding);
     }
-
-    // --- INPUT SYSTEM CALLBACKS ---
 
     public void Move(InputAction.CallbackContext context)
     {
@@ -196,23 +197,26 @@ public class PlayerMovement : MonoBehaviour
     // Your untouched Wall Jump code
     public void WallJump()
     {
-        //horizontalMovement = horizontalMovement * -1;
-        if(isFacingRight)
+        if(hasClimb)
         {
-            rb.velocity = new Vector2(-jumpPower, jumpPower);
+            //horizontalMovement = horizontalMovement * -1;
+            if (isFacingRight)
+            {
+                rb.velocity = new Vector2(-jumpPower, jumpPower);
+            }
+            if (!isFacingRight)
+            {
+                rb.velocity = new Vector2(jumpPower, jumpPower);
+            }
+            animator.SetBool("isJumping", true);
+            Debug.Log("WJump triggered");
+            audioManager?.PlaySFX(audioManager.jump);
         }
-        if (!isFacingRight)
-        {
-            rb.velocity = new Vector2(jumpPower, jumpPower);
-        }
-        animator.SetBool("isJumping", true);
-        Debug.Log("WJump triggered");
-        audioManager?.PlaySFX(audioManager.jump);
     }
 
     private void HandleWallSliding()
     {
-        if (!isGrounded && wallCheck() && horizontalMovement != 0)
+        if (!isGrounded && wallCheck() && horizontalMovement != 0 && hasClimb)
         {
             isWallSliding = true;
             jumpsRemaining = maxJumps;
@@ -319,6 +323,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Feather()
+    {
+        if (SaveManager.instance.currentSave.collectedFeatherIDs.Count == 5)
+        {
+            animator.SetBool("HasHat", true);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Collider")) SpawnPoint = other.transform.position;
@@ -330,6 +342,11 @@ public class PlayerMovement : MonoBehaviour
             hasClimb = true;
             unlockEffect?.PlayClimbAnimation();
             Destroy(other.gameObject);
+        }
+
+        if(other.CompareTag("End"))
+        {
+            FindObjectOfType<CreditsController>().StartCredits();
         }
 
         if (other.CompareTag("HitPower"))
@@ -344,7 +361,9 @@ public class PlayerMovement : MonoBehaviour
         {
             other.GetComponent<Collider2D>().enabled = false;
             FeatherAnimator.SetTrigger("Collect");
-            score += 1000; Destroy(other.gameObject, 2.3f); 
+            Feather();
+            score += 1000; Destroy(other.gameObject, 2.3f);
+            
         }
 
         if (other.CompareTag("Bench"))

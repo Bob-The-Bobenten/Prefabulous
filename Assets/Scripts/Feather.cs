@@ -14,7 +14,7 @@ public class Feather : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    { // Changed to 2D
+    { 
         if (other.CompareTag("Player"))
         {
             if (!SaveManager.instance.currentSave.collectedFeatherIDs.Contains(featherID))

@@ -13,6 +13,7 @@ TagManager:
   - Feather
   - Audio
   - Bench
+  - End
   layers:
   - Default
   - TransparentFX

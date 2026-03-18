@@ -170,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && hasHit && !isGrounded)
         {
+            animator.SetBool("HasHit", true);
             animator.SetTrigger("Dhit");
             if (isAboveSpike)
             {
@@ -246,6 +247,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if(!isWallSliding)
+            {
+                animator.SetBool("isJumping", true);
+            }
             coyoteTimeCounter -= Time.deltaTime;
         }
 
